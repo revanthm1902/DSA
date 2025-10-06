@@ -11,7 +11,7 @@ public class wtss {
     }
 
     public static int distSS(String p, String q, int k) {
-        HashSet<String> S = new HashSet<String>();
+        HashSet<String> S = new HashSet<>();
         int n = p.length();
         for (int i = 0; i < n; ++i) {
             int sum = 0;
