@@ -2,7 +2,7 @@
 public class maxEqS {
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 3};
+        int[] a = {1, 7, 3, 6, 5, 6};
         int n = a.length;
         System.out.print(MES(n, a));
     }
