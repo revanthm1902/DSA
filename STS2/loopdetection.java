@@ -1,38 +1,38 @@
 
-import java.util.Scanner;
+import java.util.*;
 
 class list {
 
-    Node head = null;
+    node head = null;
 
-    class Node {
+    class node {
 
         int data;
-        Node next;
+        node next;
 
-        Node(int n) {
+        node(int n) {
             data = n;
             next = null;
         }
     }
 
     void insert(int n) {
-        Node newNode = new Node(n);
+        node newn = new node(n);
         if (head == null) {
-            head = newNode; 
-        }else {
-            Node cur = head;
+            head = newn;
+        } else {
+            node cur = head;
             while (cur.next != null) {
                 cur = cur.next;
             }
-            cur.next = newNode;
+            cur.next = newn;
         }
     }
 
     boolean create(int a, int b) {
         int c = 0;
-        Node p1 = head;
-        Node p2 = head;
+        node p1 = head;
+        node p2 = head;
         while (p1.data != a || c != b) {
             if (p1.data != a) {
                 p1 = p1.next;
@@ -50,12 +50,12 @@ class list {
     }
 
     boolean detect() {
-        Node fast = head;
-        Node slow = head;
+        node fast = head;
+        node slow = head;
         while (fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if (slow == fast) {
+            if (fast == slow) {
                 return true;
             }
         }
@@ -66,18 +66,18 @@ class list {
     }
 }
 
-class ld {
+class loopdetection {
 
-    public static void main(String ar[]) {
-        Scanner sw = new Scanner(System.in);
-        int n = sw.nextInt();
+    public static void main(String[] args) {
         list l = new list();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            l.insert(sw.nextInt());
+            l.insert(sc.nextInt());
         }
-        int a = sw.nextInt();
+        int a = sc.nextInt();
         int b = n - 1;
         l.create(a, b);
-        System.out.print(l.detect());
+        System.out.println(l.detect());
     }
 }
