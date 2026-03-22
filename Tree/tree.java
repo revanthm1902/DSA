@@ -113,6 +113,19 @@ public class tree {
             System.out.print(val+" ");
         }
     }
+
+    public static void horview(Node root){
+        if(root==null) return;
+
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node curr=q.poll();
+            System.out.print(curr.data+" ");
+            if(curr.left!=null) q.add(curr.left);
+            if(curr.right!=null) q.add(curr.right);
+        }
+    }
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
@@ -132,5 +145,7 @@ public class tree {
         topview(root);
         System.out.println();
         bottomview(root);
+        System.out.println();
+        horview(root);
     }
 }
