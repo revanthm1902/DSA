@@ -154,6 +154,44 @@ public class tree {
             System.out.println();
         }
     }
+
+    public static boolean isLeaf(Node node){ // Boundary Traversal
+        return node.left==null && node.right==null;
+    }
+    public static void boundary(Node root){
+        if(root==null) return;
+        System.out.print(root.data+" ");
+        // Left boundary
+        Node curr=root.left;
+        while(curr!=null){
+            if(!isLeaf(curr)) System.out.print(curr.data+" ");
+            curr=(curr.left!=null)? curr.left:curr.right;
+        }
+
+        // Leaf nodes
+        printLeaves(root);
+
+        // Right boundary
+        Stack<Integer> st=new Stack<>();
+        curr=root.right;
+        while(curr!=null){
+            if(!isLeaf(curr)) st.push(curr.data);
+            curr=(curr.right!=null)? curr.right:curr.left;
+        }
+        while(!st.isEmpty()){
+            System.out.print(st.pop()+" ");
+        }
+    }
+    public static void printLeaves(Node root){
+        if(root==null) return;
+        if(isLeaf(root)){
+            System.out.print(root.data+" ");
+            return;
+        }
+        printLeaves(root.left);
+        printLeaves(root.right);
+    }
+
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
@@ -177,5 +215,7 @@ public class tree {
         horview(root);
         System.out.println();
         verticalTraversal(root);
+        System.out.println();
+        boundary(root);
     }
 }
