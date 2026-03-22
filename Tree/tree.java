@@ -126,6 +126,31 @@ public class tree {
             if(curr.right!=null) q.add(curr.right);
         }
     }
+
+    public static void verticalTraversal(Node root){
+        if(root==null) return;
+        TreeMap<Integer,ArrayList<Integer>> map=new TreeMap<>();
+        Queue<Pair> q=new LinkedList<>();
+
+        q.add(new Pair(root,0));
+
+        while(!q.isEmpty()){
+            Pair curr=q.poll();
+
+            map.putIfAbsent(curr.hd,new ArrayList<>());
+            map.get(curr.hd).add(curr.node.data);
+
+            if(curr.node.left!=null){
+                q.add(new Pair(curr.node.left,curr.hd-1));
+            }
+            if(curr.node.right!=null){
+                q.add(new Pair(curr.node.right,curr.hd+1));
+            }
+        }
+        for(ArrayList<Integer> list:map.values()){
+            System.out.print(list);
+        }
+    }
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
@@ -147,5 +172,7 @@ public class tree {
         bottomview(root);
         System.out.println();
         horview(root);
+        System.out.println();
+        verticalTraversal(root);
     }
 }
