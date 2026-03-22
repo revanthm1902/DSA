@@ -64,7 +64,30 @@ public class tree {
         rightview(root.left,level+1,res);
     }
 
-    
+    public static void topview(Node root){ //top view
+        if(root==null) return;
+        TreeMap<Integer,Integer> map=new TreeMap<>();
+        Queue<Pair> q=new LinkedList<>();
+
+        q.add(new Pair(root,0));
+
+        while(!q.isEmpty()){
+            Pair curr=q.poll();
+
+            if(!map.containsKey(curr.hd)){
+                map.put(curr.hd,curr.node.data);
+            }
+            if(curr.node.left!=null){
+                q.add(new Pair(curr.node.left,curr.hd-1));
+            }
+            if(curr.node.right!=null){
+                q.add(new Pair(curr.node.right,curr.hd+1));
+            }
+        }
+        for(int val:map.values()){
+            System.out.print(val+" ");
+        }
+    }
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
@@ -81,5 +104,6 @@ public class tree {
         ArrayList<Integer> right = new ArrayList<>();
         rightview(root, 0, right);
         System.out.println("Right view: " + right);
+        topview(root);
     }
 }
