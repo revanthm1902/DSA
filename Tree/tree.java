@@ -130,6 +130,7 @@ public class tree {
         rightview(root, 0, right);
         System.out.println("Right view: " + right);
         topview(root);
+        System.out.println();
         bottomview(root);
     }
 }
