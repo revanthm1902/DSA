@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "tree",
+            "request": "launch",
+            "mainClass": "Tree.tree",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "dfs",
             "request": "launch",
             "mainClass": "Graph.dfs",
