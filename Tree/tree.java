@@ -49,6 +49,12 @@ public class tree {
         leftview(root.right,level+1,res);
     }
     
+    public static void rightview(Node root, int level, ArrayList<Integer> res){
+        if(root==null) return;
+        if(level==res.size()) res.add(root.data);
+        rightview(root.right,level+1,res);
+        rightview(root.left,level+1,res);
+    }
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
@@ -59,8 +65,11 @@ public class tree {
         System.out.println();
         postOrder(root);
         System.out.println();
-        ArrayList<Integer> leftView = new ArrayList<>();
-        leftview(root, 0, leftView);
-        System.out.println("Left view: " + leftView);
+        ArrayList<Integer> left = new ArrayList<>();
+        leftview(root, 0, left);
+        System.out.println("Left view: " + left);
+        ArrayList<Integer> right = new ArrayList<>();
+        rightview(root, 0, right);
+        System.out.println("Right view: " + right);
     }
 }
