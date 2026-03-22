@@ -1,6 +1,14 @@
 package Tree;
 import java.util.*;
 public class tree {
+    static class Pair{
+        Node node;
+        int hd;
+        Pair(Node node, int hd){
+            this.node=node;
+            this.hd=hd;
+        }
+    }
     static class Node{
         int data;
         Node left,right;
@@ -42,19 +50,21 @@ public class tree {
         System.out.print(root.data+" ");
     }
 
-    public static void leftview(Node root, int level, ArrayList<Integer> res){
+    public static void leftview(Node root, int level, ArrayList<Integer> res){ // Left View
         if(root==null) return;
         if(level==res.size()) res.add(root.data);
         leftview(root.left,level+1,res);
         leftview(root.right,level+1,res);
     }
     
-    public static void rightview(Node root, int level, ArrayList<Integer> res){
+    public static void rightview(Node root, int level, ArrayList<Integer> res){ // Right View
         if(root==null) return;
         if(level==res.size()) res.add(root.data);
         rightview(root.right,level+1,res);
         rightview(root.left,level+1,res);
     }
+
+    
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
