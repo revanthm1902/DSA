@@ -34,6 +34,13 @@ public class tree {
         System.out.print(root.data+" ");
         inOrder(root.right);
     }
+
+    public static void postOrder(Node root){ // PostOrder Traversal
+        if(root==null) return;
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data+" ");
+    }
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
@@ -41,5 +48,7 @@ public class tree {
         preOrder(root);
         System.out.println();
         inOrder(root);
+        System.out.println();
+        postOrder(root);
     }
 }
