@@ -36,3 +36,13 @@ public class finalbfs {
         }
     }
 }
+        // // Take edges until -1 -1
+        // while (true) {
+        //     int u = sc.nextInt();
+        //     int v = sc.nextInt();
+
+        //     if (u == -1 && v == -1) break;
+
+        //     adj.get(u).add(v);
+        //     adj.get(v).add(u);
+        // }
