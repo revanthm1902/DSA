@@ -127,7 +127,7 @@ public class tree {
         }
     }
 
-    public static void verticalTraversal(Node root){
+    public static void verticalTraversal(Node root){ // Vertical traversal
         if(root==null) return;
         TreeMap<Integer,ArrayList<Integer>> map=new TreeMap<>();
         Queue<Pair> q=new LinkedList<>();
@@ -148,7 +148,10 @@ public class tree {
             }
         }
         for(ArrayList<Integer> list:map.values()){
-            System.out.print(list);
+            for(int val:list){
+                System.out.print(val+" ");
+            }
+            System.out.println();
         }
     }
     public static void main(String[] args){
