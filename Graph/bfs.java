@@ -1,7 +1,7 @@
 package Graph;
 
 import java.util.*;
-public class adjList {
+public class bfs {
     static class Edge{
         int src;
         int dest;
@@ -39,15 +39,32 @@ public class adjList {
 
         graph[6].add(new Edge(6, 5, 1));
     }
+
+    public static void BFS(ArrayList<Edge> graph[], int V, boolean vis[], int start){
+        Queue<Integer> q = new LinkedList<>();
+        q.add(start);
+        while(!q.isEmpty()){
+            int curr=q.remove();
+            if(vis[curr]==false){
+                System.out.print(curr+" ");
+                vis[curr]=true;
+
+                for(int i=0;i<graph[curr].size();i++){
+                    Edge e=graph[curr].get(i);
+                    q.add(e.dest);
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         int V = 7;
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
-        for(int i=0;i<graph.length;i++){
-            for(int j=0;j<graph[i].size();j++){
-                Edge e = graph[i].get(j);
-                System.out.println("Edge: "+e.src+" to "+e.dest+" with weight "+e.wt);
+        boolean vis[] = new boolean[V];
+        for(int i=0;i<V;i++){
+            if(vis[i]==false){
+                BFS(graph, V, vis, i);
             }
         }
     }

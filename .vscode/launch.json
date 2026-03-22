@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "finalbfs",
+            "request": "launch",
+            "mainClass": "Graph.finalbfs",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
+            "name": "bfs",
+            "request": "launch",
+            "mainClass": "Graph.bfs",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "adjList",
             "request": "launch",
             "mainClass": "Graph.adjList",
