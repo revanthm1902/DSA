@@ -114,7 +114,7 @@ public class tree {
         }
     }
 
-    public static void horview(Node root){
+    public static void horview(Node root){ // horizontal view
         if(root==null) return;
 
         Queue<Node> q=new LinkedList<>();
