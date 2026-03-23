@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "heapsort",
+            "request": "launch",
+            "mainClass": "heapsort",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "topo",
             "request": "launch",
             "mainClass": "Graph.topo",
