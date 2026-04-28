@@ -64,7 +64,7 @@ public class tree {
         rightview(root.left,level+1,res);
     }
 
-    public static void topview(Node root){ //top view
+    public static void topview(Node root){ //top view 
         if(root==null) return;
         TreeMap<Integer,Integer> map=new TreeMap<>();
         Queue<Pair> q=new LinkedList<>();
