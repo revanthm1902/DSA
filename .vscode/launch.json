@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "dist",
+            "request": "launch",
+            "mainClass": "dist",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
+            "name": "sets",
+            "request": "launch",
+            "mainClass": "STSII.sets",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "tm",
             "request": "launch",
             "mainClass": "STSII.tm",
