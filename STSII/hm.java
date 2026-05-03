@@ -16,6 +16,6 @@ public class hm {
         System.out.println(map.get(1)); // Output: null
         System.out.println(map.size()); // Output: 2
 
-        
+        map.forEach((k,v)->System.out.println(k+"->"+v));
     }
 }
