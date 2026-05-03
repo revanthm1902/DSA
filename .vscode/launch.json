@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "hashmap",
+            "request": "launch",
+            "mainClass": "STSII.hashmap",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
+            "name": "hashmap",
+            "request": "launch",
+            "mainClass": "hashmap",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "heapsort",
             "request": "launch",
             "mainClass": "heapsort",
