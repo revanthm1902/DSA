@@ -1,6 +1,8 @@
+package STSII;
+
 import java.util.HashMap;
 
-public class hashmap {
+public class hm {
     public static void main(String[] args){
         HashMap<Integer, String> map = new HashMap<>();
         map.put(1, "one");
@@ -13,5 +15,7 @@ public class hashmap {
         map.remove(1);
         System.out.println(map.get(1)); // Output: null
         System.out.println(map.size()); // Output: 2
+
+        
     }
 }
