@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "tm",
+            "request": "launch",
+            "mainClass": "STSII.tm",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "hm",
             "request": "launch",
             "mainClass": "STSII.hm",
