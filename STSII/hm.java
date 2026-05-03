@@ -29,5 +29,13 @@ public class hm {
         if(map.containsKey("2")){
             System.out.println(map.get("2")!=null?"2(TWO)":"Not Found");
         }
+
+        if(map.containsValue("on")){
+            System.out.println("one is present in the map");
+        }else{
+            System.out.println("one is not present in the map");
+        }
+
+        
     }
 }
