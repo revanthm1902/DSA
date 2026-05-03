@@ -1,6 +1,7 @@
 package STSII;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class hm {
     public static void main(String[] args){
@@ -36,6 +37,23 @@ public class hm {
             System.out.println("one is not present in the map");
         }
 
-        
+        map.remove("1");
+        System.out.println(map);
+        map.remove("two","three");
+        System.out.println(map);
+
+        map.forEach((k,v)->System.out.println(k+"->"+v));
+
+        for(Map.Entry<String, String> e: map.entrySet()){
+            System.out.println(e.getKey()+"->"+e.getValue());
+        }
+
+        for(String key: map.keySet()){
+            System.out.println(key+"->"+map.get(key));
+        }
+
+        for(String value: map.values()){
+            System.out.println(value);
+        }
     }
 }
