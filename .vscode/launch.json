@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "toh",
+            "request": "launch",
+            "mainClass": "toh",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
+            "name": "fib",
+            "request": "launch",
+            "mainClass": "fib",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "dist",
             "request": "launch",
             "mainClass": "dist",
