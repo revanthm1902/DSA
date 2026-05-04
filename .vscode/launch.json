@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "stackP",
+            "request": "launch",
+            "mainClass": "stackP",
+            "projectName": "DSA_9b0569ce"
+        },
+        {
+            "type": "java",
             "name": "toh",
             "request": "launch",
             "mainClass": "toh",

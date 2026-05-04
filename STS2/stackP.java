@@ -18,17 +18,15 @@ class stackP {
 
         while (!q1.isEmpty()) {
             int ele = q1.poll();
+
             if (ele == q2.peek()) {
                 q2.poll();
-                while (!st.isEmpty()) {
-                    if (st.peek() == q2.peek()) {
-                        st.pop();
-                        q2.poll();
-                    } else {
-                        break;
-                    }
+
+                while (!st.isEmpty() && !q2.isEmpty() && st.peek() == q2.peek()) {
+                    st.pop();
+                    q2.poll();
                 }
-            }
+            }else st.push(ele);
         }
         if (q1.isEmpty() && st.isEmpty()) {
             System.out.println("Yes");
